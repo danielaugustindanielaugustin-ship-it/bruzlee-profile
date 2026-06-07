@@ -3,130 +3,566 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D.BRUZLEE RAJ | Portfolio</title>
+<meta name="description" content="D. Bruzlee Raj Portfolio">
+<title>D. Bruzlee Raj | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#050816;
-    color:white;
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
 }
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,#6a00ff33,transparent 40%),
+radial-gradient(circle at bottom right,#00ffff22,transparent 40%);
+z-index:-1;
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.05);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+background:linear-gradient(90deg,#00e5ff,#8a2be2);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#00e5ff;
+}
+
+/* Hero */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:60px;
-    padding:50px;
-    flex-wrap:wrap;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
 }
 
-.profile-img{
-    width:320px;
-    height:320px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid cyan;
-    box-shadow:
-    0 0 20px cyan,
-    0 0 40px cyan,
-    0 0 80px cyan;
+.glass{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+padding:40px;
+border-radius:25px;
+width:100%;
+max-width:900px;
+box-shadow:0 0 30px rgba(0,255,255,.2);
 }
 
-.content{
-    max-width:700px;
+.profile{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #00e5ff;
 }
 
-.content h1{
-    font-size:3rem;
-    color:cyan;
+.hero h1{
+font-size:3rem;
+margin-top:20px;
 }
 
-.content h2{
-    color:#ff00ff;
-    margin:15px 0;
-}
-
-.contact{
-    margin:20px 0;
-    color:#ddd;
+.typing{
+color:#00e5ff;
+font-size:1.3rem;
+margin:15px 0;
 }
 
 .btn{
-    display:inline-block;
-    padding:12px 30px;
-    background:linear-gradient(45deg,cyan,magenta);
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
+display:inline-block;
+padding:12px 25px;
+margin:10px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+background:linear-gradient(45deg,#00e5ff,#8a2be2);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.stat{
+background:rgba(255,255,255,.06);
+padding:15px;
+border-radius:15px;
+min-width:140px;
+}
+
+/* Sections */
+
+section{
+padding:90px 8%;
+}
+
+.title{
+font-size:2.2rem;
+margin-bottom:40px;
+text-align:center;
+color:#00e5ff;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+/* Skills */
+
+.skill{
+margin:20px 0;
+}
+
+.skill-bar{
+height:12px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:100%;
+background:linear-gradient(90deg,#00e5ff,#8a2be2);
+}
+
+/* Timeline */
+
+.timeline{
+border-left:3px solid #00e5ff;
+padding-left:30px;
+}
+
+.timeline-item{
+margin-bottom:40px;
+position:relative;
+}
+
+.timeline-item::before{
+content:"";
+width:18px;
+height:18px;
+background:#00e5ff;
+border-radius:50%;
+position:absolute;
+left:-40px;
+top:5px;
+}
+
+/* Projects */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.project img{
+width:100%;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.tags{
+margin-top:10px;
+}
+
+.tags span{
+display:inline-block;
+padding:6px 12px;
+background:#00e5ff22;
+margin:5px;
+border-radius:20px;
+}
+
+/* Certifications */
+
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* Contact */
+
+form{
+display:grid;
+gap:15px;
+}
+
+input,textarea{
+padding:15px;
+border:none;
+outline:none;
+border-radius:10px;
+background:#151515;
+color:white;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#02040d;
+padding:30px;
+text-align:center;
+background:#111;
+margin-top:50px;
+}
+
+.social a{
+color:white;
+margin:0 10px;
+font-size:22px;
+text-decoration:none;
 }
 
 @media(max-width:768px){
-    .profile-img{
-        width:250px;
-        height:250px;
-    }
 
-    .content h1{
-        font-size:2.2rem;
-    }
+.hero h1{
+font-size:2rem;
+}
+
+nav ul{
+display:none;
+}
+
+.stats{
+flex-direction:column;
+align-items:center;
+}
 }
 </style>
-
 </head>
 <body>
 
-<div class="hero">
+<nav>
+<div class="logo">BRUZLEE</div>
 
-    <img src="033 (1).jpg" class="profile-img" alt="D.BRUZLEE RAJ">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-    <div class="content">
+<!-- HERO -->
 
-        <h1>D.BRUZLEE RAJ</h1>
+<section class="hero">
 
-        <h2>Electronic Communication Engineering</h2>
+<div class="glass">
 
-        <div class="contact">
-            📍 Chennai - 600123, India<br>
-            📞 9344935594<br>
-            ✉️ bruzeeliraj@gmail.com
-        </div>
+<img src="profile.jpg" alt="Profile" class="profile">
 
-        <p>
-            Highly skilled Electronic Communication Engineer with expertise in
-            designing and implementing robust communication systems.
-            Proficient in RF circuit design, signal processing and
-            telecommunications protocols. Experienced with MATLAB and
-            Simulink for system modelling and analysis.
-        </p>
+<h1>D. BRUZLEE RAJ</h1>
 
-        <br>
+<div class="typing" id="typing"></div>
 
-        <a href="#" class="btn">Explore Profile</a>
+<p>
+Electronics & Communication Engineering Student
+specialized in IoT, Embedded Systems,
+Signal Processing and Web Technologies.
+</p>
 
-    </div>
+<a href="resume.pdf" class="btn" download>
+Download Resume
+</a>
+
+<a href="#contact" class="btn">
+Contact Me
+</a>
+
+<div class="stats">
+
+<div class="stat">
+<h2>10+</h2>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h2>5+</h2>
+<p>Certificates</p>
+</div>
+
+<div class="stat">
+<h2>15+</h2>
+<p>Skills</p>
+</div>
 
 </div>
 
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="card">
+
+<p>
+Motivated Electronics and Communication Engineering student with expertise in communication systems, embedded systems, IoT, signal processing, RF communication, and web technologies. Passionate about innovation, problem-solving, and developing real-world technology solutions.
+</p>
+
+<br>
+
+<p>
+Career Objective: To build innovative engineering solutions and contribute to advanced technology projects while continuously learning and growing professionally.
+</p>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="title">Skills</h2>
+
+<div class="card">
+
+<div class="skill">
+Python
+<div class="skill-bar">
+<div class="skill-fill" style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+HTML & CSS
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+JavaScript
+<div class="skill-bar">
+<div class="skill-fill" style="width:80%"></div>
+</div>
+</div>
+
+<div class="skill">
+Embedded Systems
+<div class="skill-bar">
+<div class="skill-fill" style="width:88%"></div>
+</div>
+</div>
+
+<div class="skill">
+IoT Development
+<div class="skill-bar">
+<div class="skill-fill" style="width:85%"></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<h2 class="title">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Diploma in ECE</h3>
+<p>S.A Polytechnic College</p>
+<p>2022 - 2025</p>
+<p>Percentage: 7.8</p>
+</div>
+
+<div class="timeline-item">
+<h3>B.E Electronics & Communication Engineering</h3>
+<p>Panimalar Engineering College</p>
+<p>2025 - Present</p>
+<p>CGPA: 7.238</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="card project">
+
+<img src="project.jpg" alt="Project">
+
+<h3>Li-Fi Vehicle Communication System</h3>
+
+<p>
+Li-Fi based Vehicle-to-Vehicle Communication for Emergency Vehicles using VLC technology and embedded systems.
+</p>
+
+<div class="tags">
+<span>Li-Fi</span>
+<span>VLC</span>
+<span>IoT</span>
+<span>Embedded</span>
+</div>
+
+<br>
+
+<a href="#" class="btn">GitHub</a>
+<a href="#" class="btn">Demo</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section>
+
+<h2 class="title">Certifications</h2>
+
+<div class="cert-grid">
+
+<div class="card">Embedded Systems</div>
+<div class="card">IoT Development</div>
+<div class="card">Python Programming</div>
+<div class="card">Communication Systems</div>
+<div class="card">Web Development</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="title">Contact Me</h2>
+
+<div class="card">
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<input type="text" placeholder="Subject">
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+<br>
+
+<p>📍 Chennai, India</p>
+<p>📞 +91 9344935594</p>
+<p>📧 bruzeeliraj@gmail.com</p>
+
+</div>
+
+</section>
+
 <footer>
-    <h3>D.BRUZLEE RAJ</h3>
-    <p>Electronic Communication Engineering</p>
+
+<div class="social">
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+<a href="#">Instagram</a>
+<a href="#">Twitter</a>
+</div>
+
+<br>
+
+<p>© 2026 D. Bruzlee Raj | All Rights Reserved</p>
+
 </footer>
+
+<script>
+
+const words=[
+"Electronics Engineer",
+"IoT Developer",
+"Web Developer",
+"Technology Enthusiast"
+];
+
+let i=0;
+
+setInterval(()=>{
+document.getElementById("typing").innerHTML=words[i];
+i=(i+1)%words.length;
+},2000);
+
+</script>
 
 </body>
 </html>
