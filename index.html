@@ -3,254 +3,417 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D.BRUZLEE RAJ | Digital Portfolio</title>
+<title>D.BRUZLEE RAJ | Futuristic Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#050816;
-    color:white;
-    overflow-x:hidden;
+background:#050816;
+color:white;
+overflow-x:hidden;
 }
 
-/* Hero Section */
+/* Background Animation */
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:50px;
-    gap:60px;
-    flex-wrap:wrap;
+.background{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
 }
 
-.profile-img{
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #00ffff;
-    box-shadow:
-    0 0 20px cyan,
-    0 0 40px cyan,
-    0 0 80px cyan;
-    animation:float 4s ease-in-out infinite;
+.circle{
+position:absolute;
+border-radius:50%;
+filter:blur(80px);
+animation:float 10s infinite alternate;
+}
+
+.c1{
+width:300px;
+height:300px;
+background:#00ffff;
+top:10%;
+left:5%;
+}
+
+.c2{
+width:350px;
+height:350px;
+background:#ff00ff;
+right:5%;
+bottom:10%;
 }
 
 @keyframes float{
-    50%{
-        transform:translateY(-15px);
-    }
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(100px);
+}
 }
 
-.content{
-    max-width:600px;
+/* Navbar */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.content h1{
-    font-size:4rem;
-    color:#00ffff;
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#00ffff;
+text-shadow:0 0 15px cyan;
 }
 
-.content h2{
-    margin:15px 0;
-    color:#ff00ff;
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
 }
 
-.content p{
-    line-height:1.8;
-    color:#ddd;
+nav a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+nav a:hover{
+color:#00ffff;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:50px;
+gap:80px;
+flex-wrap:wrap;
+}
+
+.profile{
+width:350px;
+height:350px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid cyan;
+box-shadow:
+0 0 20px cyan,
+0 0 50px cyan,
+0 0 80px cyan;
+animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 20px cyan;
+}
+to{
+box-shadow:0 0 80px cyan;
+}
+}
+
+.hero-content{
+max-width:650px;
+}
+
+.hero-content h1{
+font-size:60px;
+color:#00ffff;
+}
+
+.hero-content h2{
+margin:10px 0;
+color:#ff00ff;
+}
+
+.hero-content p{
+line-height:1.8;
+margin-top:20px;
+color:#ddd;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 35px;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(45deg,#00ffff,#ff00ff);
-    border-radius:40px;
-    box-shadow:0 0 20px cyan;
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:linear-gradient(45deg,#00ffff,#ff00ff);
+color:white;
+text-decoration:none;
+border-radius:50px;
+box-shadow:0 0 20px cyan;
 }
 
 /* Sections */
 
 section{
-    padding:80px 10%;
+padding:100px 10%;
 }
 
 .title{
-    text-align:center;
-    font-size:2.5rem;
-    color:#00ffff;
-    margin-bottom:40px;
+text-align:center;
+font-size:40px;
+color:#00ffff;
+margin-bottom:50px;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    padding:25px;
-    transition:0.4s;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.1);
+transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px cyan;
+transform:translateY(-10px);
+box-shadow:0 0 25px cyan;
 }
 
 .card h3{
-    color:#00ffff;
-    margin-bottom:10px;
+margin-bottom:15px;
+color:#00ffff;
 }
 
+/* Skills */
+
 .skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
 }
 
 .skill{
-    padding:12px 20px;
-    background:#111827;
-    border:1px solid cyan;
-    border-radius:30px;
-    box-shadow:0 0 10px cyan;
+padding:15px 25px;
+border-radius:30px;
+background:#101827;
+border:1px solid cyan;
+box-shadow:0 0 10px cyan;
 }
 
+/* Contact */
+
+.contact{
+text-align:center;
+}
+
+.contact button{
+padding:15px 30px;
+border:none;
+background:linear-gradient(45deg,#00ffff,#ff00ff);
+color:white;
+font-size:18px;
+border-radius:40px;
+cursor:pointer;
+}
+
+/* Footer */
+
 footer{
-    text-align:center;
-    padding:30px;
-    background:#02040d;
+padding:30px;
+text-align:center;
+background:#02040d;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:40px;
+}
+
+.profile{
+width:250px;
+height:250px;
+}
+
+nav ul{
+display:none;
+}
+
 }
 
 </style>
 </head>
 <body>
 
-<div class="hero">
+<div class="background">
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+</div>
 
-    <img
-    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43b?w=800"
-    class="profile-img"
-    alt="Profile">
+<nav>
+<div class="logo">BRUZLEE</div>
 
-    <div class="content">
-        <h1>D.BRUZLEE RAJ</h1>
-        <h2>B.E ECE Student</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-        <p>
-            Completed Diploma in Electronics and Communication Engineering
-            at S.A Polytechnic College and currently pursuing
-            Bachelor of Engineering in Electronics and Communication Engineering
-            at Panimalar Engineering College.
-        </p>
+<section class="hero" id="about">
 
-        <a href="#education" class="btn">Explore Profile</a>
-    </div>
+<img
+class="profile"
+src="https://images.unsplash.com/photo-1500648767791-00dcc994a43b?w=800"
+alt="Profile">
+
+<div class="hero-content">
+
+<h1>D.BRUZLEE RAJ</h1>
+
+<h2>B.E Electronics & Communication Engineering</h2>
+
+<p>
+Completed Diploma in Electronics and Communication Engineering
+at S.A Polytechnic College and currently pursuing
+B.E Electronics and Communication Engineering
+at Panimalar Engineering College.
+</p>
+
+<a href="#education" class="btn">
+Explore My Profile
+</a>
 
 </div>
 
+</section>
+
 <section id="education">
 
-    <h2 class="title">Education</h2>
+<h2 class="title">Education</h2>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card">
-            <h3>Panimalar Engineering College</h3>
-            <p>
-                Bachelor of Engineering (ECE)
-                <br>
-                Currently Studying
-            </p>
-        </div>
+<div class="card">
+<h3>Panimalar Engineering College</h3>
+<p>
+Bachelor of Engineering (ECE)<br>
+Currently Studying
+</p>
+</div>
 
-        <div class="card">
-            <h3>S.A Polytechnic College</h3>
-            <p>
-                Diploma in Electronics and Communication Engineering
-                <br>
-                Completed
-            </p>
-        </div>
+<div class="card">
+<h3>S.A Polytechnic College</h3>
+<p>
+Diploma in Electronics & Communication Engineering<br>
+Completed
+</p>
+</div>
 
-    </div>
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Electronics</div>
+<div class="skill">Communication Systems</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Git & GitHub</div>
+<div class="skill">Problem Solving</div>
+
+</div>
 
 </section>
 
 <section>
 
-    <h2 class="title">Skills</h2>
+<h2 class="title">Address</h2>
 
-    <div class="skills">
-        <div class="skill">Electronics</div>
-        <div class="skill">Communication Systems</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Problem Solving</div>
-    </div>
+<div class="card">
+
+<p>
+Door Number: 1/191<br>
+Ramar Kovil Street<br>
+North Malayambakkam<br>
+Kundrathur Taluk<br>
+Kanchipuram District<br>
+Chennai - 600123
+</p>
+
+</div>
 
 </section>
 
-<section>
+<section class="contact" id="contact">
 
-    <h2 class="title">Address</h2>
+<h2 class="title">Contact</h2>
 
-    <div class="card">
-
-        <p>
-        Door No: 1/191,<br>
-        Ramar Kovil Street,<br>
-        North Malayambakkam,<br>
-        Kundrathur Taluk,<br>
-        Kanchipuram District,<br>
-        Chennai – 600123.
-        </p>
-
-    </div>
+<button onclick="showMessage()">
+Contact Me
+</button>
 
 </section>
 
 <footer>
-    <h3>D.BRUZLEE RAJ</h3>
-    <p>Electronics & Communication Engineering Student</p>
+
+<h3>D.BRUZLEE RAJ</h3>
+
+<p>
+Panimalar Engineering College | ECE Student
+</p>
+
 </footer>
 
 <script>
 
+function showMessage(){
+alert("Welcome to D.BRUZLEE RAJ's Futuristic Portfolio Website!");
+}
+
 document.querySelectorAll('.card').forEach(card=>{
 
-    card.addEventListener('mousemove',(e)=>{
+card.addEventListener('mousemove',(e)=>{
 
-        let x=e.offsetX;
-        let y=e.offsetY;
+let x=e.offsetX;
+let y=e.offsetY;
 
-        card.style.background=
-        `radial-gradient(circle at ${x}px ${y}px,
-        rgba(0,255,255,.2),
-        rgba(255,255,255,.05))`;
+card.style.background=
+`radial-gradient(circle at ${x}px ${y}px,
+rgba(0,255,255,.25),
+rgba(255,255,255,.05))`;
 
-    });
+});
 
 });
 
