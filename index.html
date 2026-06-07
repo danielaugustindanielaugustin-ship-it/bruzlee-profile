@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bruzlee Raj Portfolio</title>
+<title>D.BRUZLEE RAJ | Dynamic Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,203 +17,242 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0f172a,#1e293b);
+background:#050816;
 color:white;
+overflow-x:hidden;
+}
+
+.hero{
 min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:50px;
+gap:60px;
+flex-wrap:wrap;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-padding:30px;
-}
-
-.profile{
+.profile-section{
 text-align:center;
-padding:30px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-border-radius:20px;
 }
 
-.profile img{
-width:180px;
-height:180px;
+.profile-img{
+width:300px;
+height:300px;
 border-radius:50%;
-border:5px solid #00d4ff;
 object-fit:cover;
-}
-
-.profile h1{
-margin-top:15px;
-font-size:40px;
-}
-
-.profile p{
-font-size:20px;
-color:#cbd5e1;
+border:5px solid cyan;
+box-shadow:0 0 20px cyan,0 0 50px cyan;
 }
 
 .upload-btn{
 margin-top:15px;
-padding:10px 20px;
-background:#00d4ff;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.section{
-margin-top:30px;
-background:rgba(255,255,255,0.08);
-padding:25px;
-border-radius:20px;
-}
-
-.section h2{
-margin-bottom:15px;
-color:#00d4ff;
-}
-
-textarea{
-width:100%;
-height:120px;
-padding:10px;
-border-radius:10px;
-border:none;
-font-size:16px;
-}
-
-input[type=text]{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-margin-top:10px;
-}
-
-button{
 padding:12px 25px;
-margin-top:10px;
 border:none;
-border-radius:10px;
-background:#00d4ff;
+border-radius:30px;
+background:linear-gradient(45deg,cyan,magenta);
+color:white;
 cursor:pointer;
 font-weight:bold;
 }
 
-.google-box{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
+.content{
+max-width:600px;
 }
 
-.google-box input{
-flex:1;
+.content h1{
+font-size:4rem;
+color:cyan;
+outline:none;
+}
+
+.content h2{
+margin:15px 0;
+color:#ff00ff;
+outline:none;
+}
+
+.content p{
+line-height:1.8;
+color:#ddd;
+outline:none;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+text-decoration:none;
+color:white;
+background:linear-gradient(45deg,#00ffff,#ff00ff);
+border-radius:40px;
+}
+
+section{
+padding:80px 10%;
+}
+
+.title{
+text-align:center;
+font-size:2.5rem;
+color:cyan;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+border-radius:20px;
+padding:25px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px cyan;
+}
+
+.card h3{
+color:cyan;
+margin-bottom:10px;
 }
 
 .skills{
 display:flex;
-gap:15px;
 flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
 
 .skill{
-background:#00d4ff;
-color:black;
-padding:10px 15px;
-border-radius:20px;
-font-weight:bold;
+padding:12px 20px;
+background:#111827;
+border:1px solid cyan;
+border-radius:30px;
+}
+
+.search-box{
+text-align:center;
+margin-top:30px;
+}
+
+.search-box input{
+padding:12px;
+width:250px;
+border:none;
+border-radius:10px;
+}
+
+.search-box button{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:cyan;
+cursor:pointer;
 }
 
 footer{
 text-align:center;
-padding:20px;
-margin-top:30px;
+padding:30px;
+background:#02040d;
 }
 
-@media(max-width:768px){
-.profile h1{
-font-size:30px;
-}
-}
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="hero">
 
-<div class="profile">
+<div class="profile-section">
 
 <img id="profileImage"
-src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+class="profile-img">
 
 <br>
 
-<input type="file" id="imageUpload" hidden>
+<input type="file" id="imageUpload">
 
-<button class="upload-btn"
-onclick="document.getElementById('imageUpload').click()">
-Change Photo
-</button>
+</div>
 
-<h1 contenteditable="true">BRUZLEE RAJ</h1>
+<div class="content">
 
-<p contenteditable="true">
-Electronics & Communication Engineering
+<h1 contenteditable="true" id="name">
+D.BRUZLEE RAJ
+</h1>
+
+<h2 contenteditable="true" id="title">
+B.E ECE Student
+</h2>
+
+<p contenteditable="true" id="about">
+Completed Diploma in Electronics and Communication Engineering
+at S.A Polytechnic College and currently pursuing
+Bachelor of Engineering in Electronics and Communication Engineering
+at Panimalar Engineering College.
 </p>
 
-</div>
-
-<div class="section">
-
-<h2>About Me</h2>
-
-<textarea id="about">
-Highly skilled Electronics and Communication Engineer with expertise in communication systems, embedded systems, IoT and software development.
-</textarea>
+<a href="#education" class="btn">
+Explore Profile
+</a>
 
 </div>
 
-<div class="section">
+</div>
 
-<h2>Skills</h2>
+<section id="education">
+
+<h2 class="title">Education</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Panimalar Engineering College</h3>
+<p>B.E Electronics & Communication Engineering</p>
+</div>
+
+<div class="card">
+<h3>S.A Polytechnic College</h3>
+<p>Diploma in Electronics & Communication Engineering</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Skills</h2>
 
 <div class="skills">
+
 <div class="skill">HTML</div>
 <div class="skill">CSS</div>
 <div class="skill">JavaScript</div>
-<div class="skill">Python</div>
+<div class="skill">Electronics</div>
 <div class="skill">IoT</div>
-<div class="skill">MATLAB</div>
-</div>
+<div class="skill">Communication Systems</div>
 
 </div>
 
-<div class="section">
+</section>
 
-<h2>Education</h2>
+<section>
 
-<textarea>
-B.E Electronics & Communication Engineering
-Panimalar Engineering College
+<h2 class="title">Google Search</h2>
 
-Diploma in ECE
-S.A Polytechnic College
-</textarea>
+<div class="search-box">
 
-</div>
-
-<div class="section">
-
-<h2>Google Search</h2>
-
-<div class="google-box">
-
-<input type="text"
-id="googleSearch"
+<input
+type="text"
+id="searchBox"
 placeholder="Search Google">
 
 <button onclick="searchGoogle()">
@@ -219,49 +261,35 @@ Search
 
 </div>
 
-</div>
-
-<div class="section">
-
-<h2>Contact</h2>
-
-<p>Email:
-<span contenteditable="true">
-bruzeeliraj@gmail.com
-</span>
-</p>
-
-<br>
-
-<p>Phone:
-<span contenteditable="true">
-9344935594
-</span>
-</p>
-
-</div>
+</section>
 
 <footer>
-© 2026 Bruzlee Raj Portfolio Website
-</footer>
 
-</div>
+<h3>D.BRUZLEE RAJ</h3>
+<p>Dynamic Portfolio Website</p>
+
+</footer>
 
 <script>
 
 document.getElementById("imageUpload")
-.addEventListener("change",function(event){
+.addEventListener("change",function(e){
 
-const file=event.target.files[0];
+const file=e.target.files[0];
 
 if(file){
 
 const reader=new FileReader();
 
-reader.onload=function(e){
+reader.onload=function(event){
 
-document.getElementById("profileImage")
-.src=e.target.result;
+document.getElementById("profileImage").src=
+event.target.result;
+
+localStorage.setItem(
+"profileImage",
+event.target.result
+);
 
 };
 
@@ -271,21 +299,67 @@ reader.readAsDataURL(file);
 
 });
 
-function searchGoogle(){
+function saveData(){
 
-let query=document
-.getElementById("googleSearch")
-.value;
+localStorage.setItem(
+"name",
+document.getElementById("name").innerText
+);
 
-if(query.trim()!==""){
+localStorage.setItem(
+"title",
+document.getElementById("title").innerText
+);
 
-window.open(
-"https://www.google.com/search?q="
-+ encodeURIComponent(query),
-"_blank"
+localStorage.setItem(
+"about",
+document.getElementById("about").innerText
 );
 
 }
+
+document.getElementById("name")
+.addEventListener("input",saveData);
+
+document.getElementById("title")
+.addEventListener("input",saveData);
+
+document.getElementById("about")
+.addEventListener("input",saveData);
+
+window.onload=function(){
+
+if(localStorage.getItem("profileImage")){
+document.getElementById("profileImage").src=
+localStorage.getItem("profileImage");
+}
+
+if(localStorage.getItem("name")){
+document.getElementById("name").innerText=
+localStorage.getItem("name");
+}
+
+if(localStorage.getItem("title")){
+document.getElementById("title").innerText=
+localStorage.getItem("title");
+}
+
+if(localStorage.getItem("about")){
+document.getElementById("about").innerText=
+localStorage.getItem("about");
+}
+
+};
+
+function searchGoogle(){
+
+let q=document.getElementById("searchBox").value;
+
+window.open(
+"https://www.google.com/search?q="+
+encodeURIComponent(q),
+"_blank"
+);
 
 }
 
