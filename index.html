@@ -14,7 +14,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
@@ -23,37 +22,13 @@ color:white;
 overflow-x:hidden;
 }
 
-body::before{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-background:cyan;
-filter:blur(180px);
-opacity:.15;
-top:-100px;
-left:-100px;
-}
-
-body::after{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-background:magenta;
-filter:blur(180px);
-opacity:.15;
-bottom:-100px;
-right:-100px;
-}
-
 .hero{
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-wrap:wrap;
-gap:50px;
+gap:60px;
 padding:50px;
 }
 
@@ -65,9 +40,9 @@ object-fit:cover;
 border:5px solid cyan;
 box-shadow:
 0 0 20px cyan,
-0 0 50px cyan,
+0 0 40px cyan,
 0 0 80px cyan;
-animation:float 4s ease-in-out infinite;
+animation:float 4s infinite ease-in-out;
 }
 
 @keyframes float{
@@ -82,7 +57,7 @@ max-width:650px;
 
 .content h1{
 font-size:55px;
-color:#00ffff;
+color:cyan;
 text-shadow:0 0 20px cyan;
 }
 
@@ -100,9 +75,9 @@ margin:20px 0;
 
 .contact div{
 padding:10px 15px;
-background:rgba(255,255,255,.05);
 border:1px solid cyan;
-border-radius:30px;
+border-radius:25px;
+background:rgba(255,255,255,.05);
 }
 
 .content p{
@@ -110,15 +85,14 @@ line-height:1.8;
 color:#ddd;
 }
 
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 30px;
-background:linear-gradient(45deg,cyan,magenta);
-border-radius:30px;
-text-decoration:none;
+.upload-btn{
+margin-top:20px;
+padding:12px;
+border:1px solid cyan;
+background:#101827;
 color:white;
-font-weight:600;
+border-radius:10px;
+cursor:pointer;
 }
 
 section{
@@ -143,13 +117,13 @@ background:rgba(255,255,255,.05);
 padding:25px;
 border-radius:20px;
 border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(15px);
-transition:.4s;
+backdrop-filter:blur(10px);
+transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 25px cyan;
+box-shadow:0 0 20px cyan;
 }
 
 .card h3{
@@ -166,28 +140,30 @@ gap:15px;
 
 .skill{
 padding:12px 20px;
+border-radius:25px;
 border:1px solid cyan;
-border-radius:30px;
 background:#101827;
-box-shadow:0 0 10px cyan;
 }
 
 footer{
 text-align:center;
 padding:30px;
 background:#02040d;
-margin-top:50px;
 }
 
 @media(max-width:768px){
 
-.content h1{
-font-size:40px;
+.hero{
+flex-direction:column;
 }
 
 .profile-img{
 width:250px;
 height:250px;
+}
+
+.content h1{
+font-size:40px;
 }
 
 }
@@ -198,33 +174,47 @@ height:250px;
 
 <div class="hero">
 
-<img src="bruzlee.jpg" alt="D.BRUZLEE RAJ" class="profile-img">
+<div align="center">
+
+<img id="profilePreview"
+src="https://via.placeholder.com/350"
+class="profile-img"
+alt="Profile">
+
+<br><br>
+
+<input
+type="file"
+id="imageUpload"
+accept="image/*"
+class="upload-btn">
+
+</div>
 
 <div class="content">
 
 <h1>D.BRUZLEE RAJ</h1>
 
-<h2>Electronics & Communication Engineering</h2>
+<h2>B.E ECE Student</h2>
 
 <div class="contact">
-<div>📍 Chennai, India</div>
 <div>📞 9344935594</div>
 <div>✉️ bruzeeliraj@gmail.com</div>
+<div>📍 Chennai, India</div>
 </div>
 
 <p>
-Highly skilled Electronics and Communication Engineering student with knowledge in
-Analog & Digital Electronics, Embedded Systems, Signal Processing, PCB Design,
-Microcontrollers, IoT Development, MATLAB, Proteus, C, C++, Python and Communication Systems.
+Completed Diploma in Electronics and Communication Engineering
+at S.A Polytechnic College and currently pursuing
+B.E Electronics and Communication Engineering
+at Panimalar Engineering College.
 </p>
 
-<a href="#education" class="btn">View Profile</a>
-
 </div>
 
 </div>
 
-<section id="education">
+<section>
 
 <h2 class="title">Education</h2>
 
@@ -232,19 +222,14 @@ Microcontrollers, IoT Development, MATLAB, Proteus, C, C++, Python and Communica
 
 <div class="card">
 <h3>Panimalar Engineering College</h3>
-<p>
-Bachelor of Engineering (ECE)<br>
-2025 - Present
-</p>
+<p>B.E Electronics & Communication Engineering</p>
+<p>Currently Studying</p>
 </div>
 
 <div class="card">
 <h3>S.A Polytechnic College</h3>
-<p>
-Diploma in Electronics & Communication Engineering<br>
-CGPA : 7.8<br>
-2022 - 2025
-</p>
+<p>Diploma ECE</p>
+<p>Completed</p>
 </div>
 
 </div>
@@ -260,15 +245,11 @@ CGPA : 7.8<br>
 <div class="skill">HTML</div>
 <div class="skill">CSS</div>
 <div class="skill">JavaScript</div>
+<div class="skill">Python</div>
 <div class="skill">C</div>
 <div class="skill">C++</div>
-<div class="skill">Python</div>
 <div class="skill">MATLAB</div>
-<div class="skill">Proteus</div>
 <div class="skill">Embedded Systems</div>
-<div class="skill">PCB Design</div>
-<div class="skill">IoT Development</div>
-<div class="skill">Signal Processing</div>
 
 </div>
 
@@ -280,37 +261,13 @@ CGPA : 7.8<br>
 
 <div class="card">
 
-<p>
-Door No : 1/191<br>
+Door No: 1/191<br>
 Ramar Kovil Street<br>
 North Malayambakkam<br>
 Kundrathur Taluk<br>
 Kanchipuram District<br>
 Chennai - 600123
-</p>
 
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Languages</h2>
-
-<div class="skills">
-<div class="skill">Tamil</div>
-<div class="skill">English</div>
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Hobbies</h2>
-
-<div class="skills">
-<div class="skill">Travelling</div>
-<div class="skill">Volleyball</div>
 </div>
 
 </section>
@@ -322,6 +279,33 @@ Chennai - 600123
 <p>Electronics & Communication Engineering Student</p>
 
 </footer>
+
+<script>
+
+const upload=document.getElementById('imageUpload');
+const preview=document.getElementById('profilePreview');
+
+upload.addEventListener('change',function(e){
+
+const file=e.target.files[0];
+
+if(file){
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+preview.src=event.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
