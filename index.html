@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D.BRUZLEE RAJ | Dynamic Portfolio</title>
+<title>D.BRUZLEE RAJ | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -19,7 +18,7 @@ font-family:'Poppins',sans-serif;
 body{
 background:#050816;
 color:white;
-overflow-x:hidden;
+line-height:1.7;
 }
 
 .hero{
@@ -27,95 +26,68 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+gap:50px;
 padding:50px;
-gap:60px;
 flex-wrap:wrap;
 }
 
-.profile-section{
-text-align:center;
-}
-
 .profile-img{
-width:300px;
-height:300px;
+width:320px;
+height:320px;
 border-radius:50%;
 object-fit:cover;
 border:5px solid cyan;
 box-shadow:0 0 20px cyan,0 0 50px cyan;
 }
 
-.upload-btn{
-margin-top:15px;
-padding:12px 25px;
-border:none;
-border-radius:30px;
-background:linear-gradient(45deg,cyan,magenta);
-color:white;
-cursor:pointer;
-font-weight:bold;
-}
-
 .content{
-max-width:600px;
+max-width:700px;
 }
 
 .content h1{
-font-size:4rem;
+font-size:3rem;
 color:cyan;
-outline:none;
 }
 
 .content h2{
-margin:15px 0;
 color:#ff00ff;
-outline:none;
+margin:10px 0;
 }
 
-.content p{
-line-height:1.8;
-color:#ddd;
-outline:none;
+.contact{
+margin-top:15px;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:15px 35px;
+margin-top:20px;
+padding:12px 30px;
+background:linear-gradient(45deg,cyan,magenta);
+border-radius:30px;
 text-decoration:none;
 color:white;
-background:linear-gradient(45deg,#00ffff,#ff00ff);
-border-radius:40px;
 }
 
 section{
-padding:80px 10%;
+padding:70px 10%;
 }
 
 .title{
 text-align:center;
 font-size:2.5rem;
 color:cyan;
-margin-bottom:40px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+margin-bottom:30px;
 }
 
 .card{
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(15px);
-border-radius:20px;
 padding:25px;
-transition:.4s;
+border-radius:20px;
+margin-bottom:25px;
+border:1px solid rgba(255,255,255,.1);
 }
 
 .card:hover{
-transform:translateY(-10px);
 box-shadow:0 0 20px cyan;
 }
 
@@ -133,95 +105,129 @@ justify-content:center;
 
 .skill{
 padding:12px 20px;
-background:#111827;
 border:1px solid cyan;
 border-radius:30px;
+background:#111827;
 }
 
-.search-box{
-text-align:center;
-margin-top:30px;
-}
-
-.search-box input{
-padding:12px;
-width:250px;
-border:none;
-border-radius:10px;
-}
-
-.search-box button{
-padding:12px 20px;
-border:none;
-border-radius:10px;
-background:cyan;
-cursor:pointer;
+ul{
+padding-left:20px;
 }
 
 footer{
-text-align:center;
-padding:30px;
 background:#02040d;
+padding:25px;
+text-align:center;
+margin-top:40px;
 }
-
 </style>
 </head>
 <body>
 
 <div class="hero">
 
-<div class="profile-section">
-
-<img id="profileImage"
-src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-class="profile-img">
-
-<br>
-
-<input type="file" id="imageUpload">
-
-</div>
+<img src="033.jpg" class="profile-img" alt="BRUZLEE RAJ">
 
 <div class="content">
 
-<h1 contenteditable="true" id="name">
-D.BRUZLEE RAJ
-</h1>
+<h1>D. BRUZLEE RAJ</h1>
 
-<h2 contenteditable="true" id="title">
-B.E ECE Student
-</h2>
+<h2>Electronic Communication Engineering</h2>
 
-<p contenteditable="true" id="about">
-Completed Diploma in Electronics and Communication Engineering
-at S.A Polytechnic College and currently pursuing
-Bachelor of Engineering in Electronics and Communication Engineering
-at Panimalar Engineering College.
+<div class="contact">
+📍 Chennai - 600123, India<br>
+📞 9344935594<br>
+✉️ bruzeeliraj@gmail.com
+</div>
+
+<p style="margin-top:20px;">
+Highly skilled Electronic Communication Engineer with expertise in designing and implementing robust communication systems. Proficient in RF circuit design, signal processing, and telecommunications protocols, enhancing system reliability and performance. Adept at utilizing simulation tools like MATLAB and Simulink for system modeling and analysis.
 </p>
 
-<a href="#education" class="btn">
-Explore Profile
-</a>
+<a href="#education" class="btn">Explore Profile</a>
 
 </div>
 
 </div>
+
+<section>
+
+<h2 class="title">Summary</h2>
+
+<div class="card">
+<ul>
+<li>Highly skilled Electronic Communication Engineer.</li>
+<li>Expertise in RF circuits and communication systems.</li>
+<li>Strong knowledge of signal processing.</li>
+<li>Experience with MATLAB and Simulink.</li>
+</ul>
+</div>
+
+</section>
 
 <section id="education">
 
 <h2 class="title">Education</h2>
 
-<div class="cards">
-
 <div class="card">
-<h3>Panimalar Engineering College</h3>
-<p>B.E Electronics & Communication Engineering</p>
+
+<h3>Diploma - ECE (Percentage: 7.8)</h3>
+
+<p>
+S.A Polytechnic College, Chennai<br>
+01/2022 - 01/2025
+</p>
+
+<ul>
+<li>Analog and Digital Electronics.</li>
+<li>Microprocessors and Microcontrollers.</li>
+<li>PCB Design and IoT Development.</li>
+<li>C, C++, Python, MATLAB and Proteus.</li>
+<li>Automation and Wireless Communication Projects.</li>
+</ul>
+
 </div>
 
 <div class="card">
-<h3>S.A Polytechnic College</h3>
-<p>Diploma in Electronics & Communication Engineering</p>
+
+<h3>BE - ECE (CGPA: 7.238)</h3>
+
+<p>
+Panimalar Engineering College, Chennai<br>
+01/2025 - Present
+</p>
+
+<ul>
+<li>Digital Signal Processing.</li>
+<li>Embedded Systems.</li>
+<li>VLSI Design.</li>
+<li>Communication Systems.</li>
+<li>FPGA Programming and IoT Projects.</li>
+<li>MATLAB, Proteus, VHDL and C/C++.</li>
+</ul>
+
 </div>
+
+</section>
+
+<section>
+
+<h2 class="title">Projects</h2>
+
+<div class="card">
+
+<h3>LI-FI BASED VEHICLE TO VEHICLE COMMUNICATION FOR EMERGENCY VEHICLES</h3>
+
+<p>01/2025 - 05/2025</p>
+
+<ul>
+<li>Developed Li-Fi communication system.</li>
+<li>Achieved 99.8% data transfer reliability.</li>
+<li>Reduced emergency response time by 15%.</li>
+<li>Used Visible Light Communication technology.</li>
+<li>Led system design, testing and implementation.</li>
+<li>Improved emergency vehicle coordination.</li>
+</ul>
 
 </div>
 
@@ -233,31 +239,18 @@ Explore Profile
 
 <div class="skills">
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Electronics</div>
+<div class="skill">Teamwork</div>
+<div class="skill">Adaptability</div>
+<div class="skill">Communication</div>
+<div class="skill">Time Management</div>
+<div class="skill">MATLAB</div>
+<div class="skill">Proteus</div>
+<div class="skill">VHDL</div>
+<div class="skill">C</div>
+<div class="skill">C++</div>
+<div class="skill">Python</div>
 <div class="skill">IoT</div>
-<div class="skill">Communication Systems</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">Google Search</h2>
-
-<div class="search-box">
-
-<input
-type="text"
-id="searchBox"
-placeholder="Search Google">
-
-<button onclick="searchGoogle()">
-Search
-</button>
+<div class="skill">Embedded Systems</div>
 
 </div>
 
@@ -265,105 +258,17 @@ Search
 
 <footer>
 
-<h3>D.BRUZLEE RAJ</h3>
-<p>Dynamic Portfolio Website</p>
+<h3>D. BRUZLEE RAJ</h3>
+
+<p>
+Electronic Communication Engineering
+</p>
+
+<p>
+Chennai - 600123 | 9344935594 | bruzeeliraj@gmail.com
+</p>
 
 </footer>
-
-<script>
-
-document.getElementById("imageUpload")
-.addEventListener("change",function(e){
-
-const file=e.target.files[0];
-
-if(file){
-
-const reader=new FileReader();
-
-reader.onload=function(event){
-
-document.getElementById("profileImage").src=
-event.target.result;
-
-localStorage.setItem(
-"profileImage",
-event.target.result
-);
-
-};
-
-reader.readAsDataURL(file);
-
-}
-
-});
-
-function saveData(){
-
-localStorage.setItem(
-"name",
-document.getElementById("name").innerText
-);
-
-localStorage.setItem(
-"title",
-document.getElementById("title").innerText
-);
-
-localStorage.setItem(
-"about",
-document.getElementById("about").innerText
-);
-
-}
-
-document.getElementById("name")
-.addEventListener("input",saveData);
-
-document.getElementById("title")
-.addEventListener("input",saveData);
-
-document.getElementById("about")
-.addEventListener("input",saveData);
-
-window.onload=function(){
-
-if(localStorage.getItem("profileImage")){
-document.getElementById("profileImage").src=
-localStorage.getItem("profileImage");
-}
-
-if(localStorage.getItem("name")){
-document.getElementById("name").innerText=
-localStorage.getItem("name");
-}
-
-if(localStorage.getItem("title")){
-document.getElementById("title").innerText=
-localStorage.getItem("title");
-}
-
-if(localStorage.getItem("about")){
-document.getElementById("about").innerText=
-localStorage.getItem("about");
-}
-
-};
-
-function searchGoogle(){
-
-let q=document.getElementById("searchBox").value;
-
-window.open(
-"https://www.google.com/search?q="+
-encodeURIComponent(q),
-"_blank"
-);
-
-}
-
-</script>
 
 </body>
 </html>
