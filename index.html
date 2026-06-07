@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -26,7 +27,7 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:50px;
+gap:60px;
 padding:50px;
 flex-wrap:wrap;
 }
@@ -34,10 +35,13 @@ flex-wrap:wrap;
 .profile-img{
 width:320px;
 height:320px;
-border-radius:50%;
 object-fit:cover;
+border-radius:50%;
 border:5px solid cyan;
-box-shadow:0 0 20px cyan,0 0 50px cyan;
+box-shadow:
+0 0 20px cyan,
+0 0 40px cyan,
+0 0 80px cyan;
 }
 
 .content{
@@ -45,49 +49,52 @@ max-width:700px;
 }
 
 .content h1{
-font-size:3rem;
+font-size:3.5rem;
 color:cyan;
 }
 
 .content h2{
 color:#ff00ff;
-margin:10px 0;
+margin:15px 0;
 }
 
 .contact{
-margin-top:15px;
+margin:20px 0;
+color:#ddd;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:12px 30px;
+padding:15px 35px;
 background:linear-gradient(45deg,cyan,magenta);
-border-radius:30px;
-text-decoration:none;
 color:white;
+text-decoration:none;
+border-radius:40px;
+margin-top:20px;
 }
 
 section{
-padding:70px 10%;
+padding:80px 10%;
 }
 
 .title{
 text-align:center;
 font-size:2.5rem;
 color:cyan;
-margin-bottom:30px;
+margin-bottom:40px;
 }
 
 .card{
 background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
 padding:25px;
 border-radius:20px;
 margin-bottom:25px;
-border:1px solid rgba(255,255,255,.1);
+transition:.4s;
 }
 
 .card:hover{
+transform:translateY(-8px);
 box-shadow:0 0 20px cyan;
 }
 
@@ -99,15 +106,15 @@ margin-bottom:10px;
 .skills{
 display:flex;
 flex-wrap:wrap;
-gap:15px;
 justify-content:center;
+gap:15px;
 }
 
 .skill{
 padding:12px 20px;
+background:#111827;
 border:1px solid cyan;
 border-radius:30px;
-background:#111827;
 }
 
 ul{
@@ -116,32 +123,50 @@ padding-left:20px;
 
 footer{
 background:#02040d;
-padding:25px;
+padding:30px;
 text-align:center;
-margin-top:40px;
 }
+
+@media(max-width:768px){
+
+.content h1{
+font-size:2.5rem;
+}
+
+.profile-img{
+width:250px;
+height:250px;
+}
+
+}
+
 </style>
 </head>
 <body>
 
 <div class="hero">
 
-<img src="033.jpg" class="profile-img" alt="BRUZLEE RAJ">
+<img src="033 (1).jpg" class="profile-img" alt="BRUZLEE RAJ">
 
 <div class="content">
 
-<h1>D. BRUZLEE RAJ</h1>
+<h1>D.BRUZLEE RAJ</h1>
 
 <h2>Electronic Communication Engineering</h2>
 
 <div class="contact">
+
 📍 Chennai - 600123, India<br>
 📞 9344935594<br>
 ✉️ bruzeeliraj@gmail.com
+
 </div>
 
-<p style="margin-top:20px;">
-Highly skilled Electronic Communication Engineer with expertise in designing and implementing robust communication systems. Proficient in RF circuit design, signal processing, and telecommunications protocols, enhancing system reliability and performance. Adept at utilizing simulation tools like MATLAB and Simulink for system modeling and analysis.
+<p>
+Highly skilled Electronic Communication Engineer with expertise in designing
+and implementing robust communication systems. Proficient in RF circuit
+design, signal processing and telecommunications protocols. Experienced
+with MATLAB and Simulink for system modelling and analysis.
 </p>
 
 <a href="#education" class="btn">Explore Profile</a>
@@ -155,12 +180,15 @@ Highly skilled Electronic Communication Engineer with expertise in designing and
 <h2 class="title">Summary</h2>
 
 <div class="card">
+
 <ul>
-<li>Highly skilled Electronic Communication Engineer.</li>
-<li>Expertise in RF circuits and communication systems.</li>
-<li>Strong knowledge of signal processing.</li>
-<li>Experience with MATLAB and Simulink.</li>
+<li>Expert in communication systems and electronics.</li>
+<li>Strong knowledge of RF circuit design.</li>
+<li>Experience in signal processing.</li>
+<li>Proficient in MATLAB and Simulink.</li>
+<li>Excellent analytical and troubleshooting skills.</li>
 </ul>
+
 </div>
 
 </section>
@@ -179,11 +207,12 @@ S.A Polytechnic College, Chennai<br>
 </p>
 
 <ul>
-<li>Analog and Digital Electronics.</li>
-<li>Microprocessors and Microcontrollers.</li>
-<li>PCB Design and IoT Development.</li>
-<li>C, C++, Python, MATLAB and Proteus.</li>
-<li>Automation and Wireless Communication Projects.</li>
+<li>Analog and Digital Electronics</li>
+<li>Microprocessors & Microcontrollers</li>
+<li>PCB Design & IoT Development</li>
+<li>C, C++, Python Programming</li>
+<li>MATLAB & Proteus</li>
+<li>Automation & Wireless Communication</li>
 </ul>
 
 </div>
@@ -198,12 +227,12 @@ Panimalar Engineering College, Chennai<br>
 </p>
 
 <ul>
-<li>Digital Signal Processing.</li>
-<li>Embedded Systems.</li>
-<li>VLSI Design.</li>
-<li>Communication Systems.</li>
-<li>FPGA Programming and IoT Projects.</li>
-<li>MATLAB, Proteus, VHDL and C/C++.</li>
+<li>Digital Signal Processing</li>
+<li>Embedded Systems</li>
+<li>VLSI Design</li>
+<li>Communication Systems</li>
+<li>FPGA Programming</li>
+<li>VHDL, MATLAB, Proteus</li>
 </ul>
 
 </div>
@@ -212,11 +241,11 @@ Panimalar Engineering College, Chennai<br>
 
 <section>
 
-<h2 class="title">Projects</h2>
+<h2 class="title">Project</h2>
 
 <div class="card">
 
-<h3>LI-FI BASED VEHICLE TO VEHICLE COMMUNICATION FOR EMERGENCY VEHICLES</h3>
+<h3>LI-FI Based Vehicle To Vehicle Communication For Emergency Vehicles</h3>
 
 <p>01/2025 - 05/2025</p>
 
@@ -225,8 +254,8 @@ Panimalar Engineering College, Chennai<br>
 <li>Achieved 99.8% data transfer reliability.</li>
 <li>Reduced emergency response time by 15%.</li>
 <li>Used Visible Light Communication technology.</li>
-<li>Led system design, testing and implementation.</li>
-<li>Improved emergency vehicle coordination.</li>
+<li>Improved coordination between emergency vehicles.</li>
+<li>Led system design and testing.</li>
 </ul>
 
 </div>
@@ -258,7 +287,7 @@ Panimalar Engineering College, Chennai<br>
 
 <footer>
 
-<h3>D. BRUZLEE RAJ</h3>
+<h3>D.BRUZLEE RAJ</h3>
 
 <p>
 Electronic Communication Engineering
