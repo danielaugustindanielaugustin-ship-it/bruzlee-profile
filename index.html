@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D.BRUZLEE RAJ Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050816;
+    overflow:hidden;
+}
+
+/* Animated Background */
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#00ffff;
+    filter:blur(200px);
+    opacity:0.3;
+    animation:move1 8s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#ff00ff;
+    filter:blur(200px);
+    opacity:0.3;
+    animation:move2 8s infinite alternate;
+}
+
+@keyframes move1{
+    from{transform:translate(-200px,-100px);}
+    to{transform:translate(200px,100px);}
+}
+
+@keyframes move2{
+    from{transform:translate(200px,100px);}
+    to{transform:translate(-200px,-100px);}
+}
+
+.card{
+    position:relative;
+    width:900px;
+    max-width:95%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    display:flex;
+    overflow:hidden;
+    box-shadow:0 0 40px #00ffff;
+    z-index:10;
+}
+
+.left{
+    width:35%;
+    background:rgba(0,255,255,0.08);
+    padding:30px;
+    text-align:center;
+}
+
+.left img{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #00ffff;
+    box-shadow:0 0 30px #00ffff;
+}
+
+.left h2{
+    color:white;
+    margin-top:20px;
+    text-shadow:0 0 15px cyan;
+}
+
+.left p{
+    color:#ddd;
+    margin-top:10px;
+}
+
+.right{
+    width:65%;
+    padding:35px;
+    color:white;
+}
+
+.title{
+    font-size:35px;
+    color:#00ffff;
+    text-shadow:0 0 20px #00ffff;
+    margin-bottom:20px;
+}
+
+.section{
+    margin-bottom:20px;
+}
+
+.section h3{
+    color:#00ffff;
+    margin-bottom:10px;
+}
+
+.section p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#00ffff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+    box-shadow:0 0 20px #00ffff;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+@media(max-width:768px){
+    .card{
+        flex-direction:column;
+    }
+
+    .left,.right{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+    <div class="left">
+        <img src="photo.jpg" alt="Profile">
+        <h2>D.BRUZLEE RAJ</h2>
+        <p>ECE Student</p>
+        <p>📍 Chennai, Tamil Nadu</p>
+    </div>
+
+    <div class="right">
+
+        <div class="title">My Digital Resume</div>
+
+        <div class="section">
+            <h3>About Me</h3>
+            <p>
+                I am D.Bruzlee Raj. I completed Diploma ECE at
+                S.A Polytechnic College and currently pursuing
+                B.E Electronics and Communication Engineering
+                at Panimalar Engineering College.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Education</h3>
+            <p>
+                🎓 S.A Polytechnic College - Diploma ECE (Completed)
+                <br><br>
+                🎓 Panimalar Engineering College - B.E ECE (Currently Studying)
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Address</h3>
+            <p>
+                Door No: 1/191,<br>
+                Ramar Kovil Street,<br>
+                North Malayambakkam,<br>
+                Kundrathur Taluk,<br>
+                Kanchipuram District,<br>
+                Chennai - 600123.
+            </p>
+        </div>
+
+        <button onclick="showMsg()">Contact Me</button>
+
+    </div>
+
+</div>
+
+<script>
+function showMsg(){
+    alert("Welcome to D.BRUZLEE RAJ's Digital Resume!");
+}
+</script>
+
+</body>
+</html>
