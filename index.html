@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D.BRUZLEE RAJ | Futuristic Portfolio</title>
+<title>D.BRUZLEE RAJ Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -23,100 +23,43 @@ color:white;
 overflow-x:hidden;
 }
 
-/* Background Animation */
-
-.background{
+body::before{
+content:"";
 position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-overflow:hidden;
+width:500px;
+height:500px;
+background:cyan;
+filter:blur(180px);
+opacity:.15;
+top:-100px;
+left:-100px;
 }
 
-.circle{
-position:absolute;
-border-radius:50%;
-filter:blur(80px);
-animation:float 10s infinite alternate;
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:magenta;
+filter:blur(180px);
+opacity:.15;
+bottom:-100px;
+right:-100px;
 }
-
-.c1{
-width:300px;
-height:300px;
-background:#00ffff;
-top:10%;
-left:5%;
-}
-
-.c2{
-width:350px;
-height:350px;
-background:#ff00ff;
-right:5%;
-bottom:10%;
-}
-
-@keyframes float{
-from{
-transform:translateY(0px);
-}
-to{
-transform:translateY(100px);
-}
-}
-
-/* Navbar */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#00ffff;
-text-shadow:0 0 15px cyan;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-transition:.3s;
-}
-
-nav a:hover{
-color:#00ffff;
-}
-
-/* Hero */
 
 .hero{
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:50px;
-gap:80px;
 flex-wrap:wrap;
+gap:50px;
+padding:50px;
 }
 
-.profile{
-width:350px;
-height:350px;
+.profile-img{
+width:320px;
+height:320px;
 border-radius:50%;
 object-fit:cover;
 border:5px solid cyan;
@@ -124,74 +67,83 @@ box-shadow:
 0 0 20px cyan,
 0 0 50px cyan,
 0 0 80px cyan;
-animation:glow 3s infinite alternate;
+animation:float 4s ease-in-out infinite;
 }
 
-@keyframes glow{
-from{
-box-shadow:0 0 20px cyan;
-}
-to{
-box-shadow:0 0 80px cyan;
+@keyframes float{
+50%{
+transform:translateY(-15px);
 }
 }
 
-.hero-content{
+.content{
 max-width:650px;
 }
 
-.hero-content h1{
-font-size:60px;
+.content h1{
+font-size:55px;
 color:#00ffff;
+text-shadow:0 0 20px cyan;
 }
 
-.hero-content h2{
-margin:10px 0;
+.content h2{
 color:#ff00ff;
+margin:10px 0;
 }
 
-.hero-content p{
+.contact{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin:20px 0;
+}
+
+.contact div{
+padding:10px 15px;
+background:rgba(255,255,255,.05);
+border:1px solid cyan;
+border-radius:30px;
+}
+
+.content p{
 line-height:1.8;
-margin-top:20px;
 color:#ddd;
 }
 
 .btn{
 display:inline-block;
 margin-top:25px;
-padding:15px 35px;
-background:linear-gradient(45deg,#00ffff,#ff00ff);
-color:white;
+padding:15px 30px;
+background:linear-gradient(45deg,cyan,magenta);
+border-radius:30px;
 text-decoration:none;
-border-radius:50px;
-box-shadow:0 0 20px cyan;
+color:white;
+font-weight:600;
 }
 
-/* Sections */
-
 section{
-padding:100px 10%;
+padding:80px 10%;
 }
 
 .title{
 text-align:center;
 font-size:40px;
-color:#00ffff;
-margin-bottom:50px;
+color:cyan;
+margin-bottom:40px;
 }
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+gap:25px;
 }
 
 .card{
 background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-padding:30px;
+padding:25px;
 border-radius:20px;
 border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(15px);
 transition:.4s;
 }
 
@@ -201,11 +153,9 @@ box-shadow:0 0 25px cyan;
 }
 
 .card h3{
-margin-bottom:15px;
-color:#00ffff;
+color:cyan;
+margin-bottom:10px;
 }
-
-/* Skills */
 
 .skills{
 display:flex;
@@ -215,51 +165,29 @@ gap:15px;
 }
 
 .skill{
-padding:15px 25px;
+padding:12px 20px;
+border:1px solid cyan;
 border-radius:30px;
 background:#101827;
-border:1px solid cyan;
 box-shadow:0 0 10px cyan;
 }
 
-/* Contact */
-
-.contact{
-text-align:center;
-}
-
-.contact button{
-padding:15px 30px;
-border:none;
-background:linear-gradient(45deg,#00ffff,#ff00ff);
-color:white;
-font-size:18px;
-border-radius:40px;
-cursor:pointer;
-}
-
-/* Footer */
-
 footer{
-padding:30px;
 text-align:center;
+padding:30px;
 background:#02040d;
 margin-top:50px;
 }
 
 @media(max-width:768px){
 
-.hero-content h1{
+.content h1{
 font-size:40px;
 }
 
-.profile{
+.profile-img{
 width:250px;
 height:250px;
-}
-
-nav ul{
-display:none;
 }
 
 }
@@ -268,49 +196,33 @@ display:none;
 </head>
 <body>
 
-<div class="background">
-<div class="circle c1"></div>
-<div class="circle c2"></div>
-</div>
+<div class="hero">
 
-<nav>
-<div class="logo">BRUZLEE</div>
+<img src="bruzlee.jpg" alt="D.BRUZLEE RAJ" class="profile-img">
 
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<section class="hero" id="about">
-
-<img
-class="profile"
-src="https://images.unsplash.com/photo-1500648767791-00dcc994a43b?w=800"
-alt="Profile">
-
-<div class="hero-content">
+<div class="content">
 
 <h1>D.BRUZLEE RAJ</h1>
 
-<h2>B.E Electronics & Communication Engineering</h2>
+<h2>Electronics & Communication Engineering</h2>
+
+<div class="contact">
+<div>📍 Chennai, India</div>
+<div>📞 9344935594</div>
+<div>✉️ bruzeeliraj@gmail.com</div>
+</div>
 
 <p>
-Completed Diploma in Electronics and Communication Engineering
-at S.A Polytechnic College and currently pursuing
-B.E Electronics and Communication Engineering
-at Panimalar Engineering College.
+Highly skilled Electronics and Communication Engineering student with knowledge in
+Analog & Digital Electronics, Embedded Systems, Signal Processing, PCB Design,
+Microcontrollers, IoT Development, MATLAB, Proteus, C, C++, Python and Communication Systems.
 </p>
 
-<a href="#education" class="btn">
-Explore My Profile
-</a>
+<a href="#education" class="btn">View Profile</a>
 
 </div>
 
-</section>
+</div>
 
 <section id="education">
 
@@ -322,7 +234,7 @@ Explore My Profile
 <h3>Panimalar Engineering College</h3>
 <p>
 Bachelor of Engineering (ECE)<br>
-Currently Studying
+2025 - Present
 </p>
 </div>
 
@@ -330,7 +242,8 @@ Currently Studying
 <h3>S.A Polytechnic College</h3>
 <p>
 Diploma in Electronics & Communication Engineering<br>
-Completed
+CGPA : 7.8<br>
+2022 - 2025
 </p>
 </div>
 
@@ -338,19 +251,24 @@ Completed
 
 </section>
 
-<section id="skills">
+<section>
 
-<h2 class="title">Technical Skills</h2>
+<h2 class="title">Skills</h2>
 
 <div class="skills">
 
-<div class="skill">Electronics</div>
-<div class="skill">Communication Systems</div>
 <div class="skill">HTML</div>
 <div class="skill">CSS</div>
 <div class="skill">JavaScript</div>
-<div class="skill">Git & GitHub</div>
-<div class="skill">Problem Solving</div>
+<div class="skill">C</div>
+<div class="skill">C++</div>
+<div class="skill">Python</div>
+<div class="skill">MATLAB</div>
+<div class="skill">Proteus</div>
+<div class="skill">Embedded Systems</div>
+<div class="skill">PCB Design</div>
+<div class="skill">IoT Development</div>
+<div class="skill">Signal Processing</div>
 
 </div>
 
@@ -363,7 +281,7 @@ Completed
 <div class="card">
 
 <p>
-Door Number: 1/191<br>
+Door No : 1/191<br>
 Ramar Kovil Street<br>
 North Malayambakkam<br>
 Kundrathur Taluk<br>
@@ -375,13 +293,25 @@ Chennai - 600123
 
 </section>
 
-<section class="contact" id="contact">
+<section>
 
-<h2 class="title">Contact</h2>
+<h2 class="title">Languages</h2>
 
-<button onclick="showMessage()">
-Contact Me
-</button>
+<div class="skills">
+<div class="skill">Tamil</div>
+<div class="skill">English</div>
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Hobbies</h2>
+
+<div class="skills">
+<div class="skill">Travelling</div>
+<div class="skill">Volleyball</div>
+</div>
 
 </section>
 
@@ -389,35 +319,9 @@ Contact Me
 
 <h3>D.BRUZLEE RAJ</h3>
 
-<p>
-Panimalar Engineering College | ECE Student
-</p>
+<p>Electronics & Communication Engineering Student</p>
 
 </footer>
-
-<script>
-
-function showMessage(){
-alert("Welcome to D.BRUZLEE RAJ's Futuristic Portfolio Website!");
-}
-
-document.querySelectorAll('.card').forEach(card=>{
-
-card.addEventListener('mousemove',(e)=>{
-
-let x=e.offsetX;
-let y=e.offsetY;
-
-card.style.background=
-`radial-gradient(circle at ${x}px ${y}px,
-rgba(0,255,255,.25),
-rgba(255,255,255,.05))`;
-
-});
-
-});
-
-</script>
 
 </body>
 </html>
