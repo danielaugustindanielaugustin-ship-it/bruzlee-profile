@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D.BRUZLEE RAJ Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Bruzlee Raj Portfolio</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -17,293 +14,280 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#050816;
+background:linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
-overflow-x:hidden;
-}
-
-.hero{
 min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
-gap:60px;
-padding:50px;
 }
 
-.profile-img{
-width:320px;
-height:320px;
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:30px;
+}
+
+.profile{
+text-align:center;
+padding:30px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border-radius:20px;
+}
+
+.profile img{
+width:180px;
+height:180px;
 border-radius:50%;
+border:5px solid #00d4ff;
 object-fit:cover;
-border:5px solid cyan;
-box-shadow:
-0 0 20px cyan,
-0 0 40px cyan,
-0 0 80px cyan;
-animation:float 4s infinite ease-in-out;
 }
 
-@keyframes float{
-50%{
-transform:translateY(-15px);
-}
-}
-
-.content{
-max-width:650px;
+.profile h1{
+margin-top:15px;
+font-size:40px;
 }
 
-.content h1{
-font-size:55px;
-color:cyan;
-text-shadow:0 0 20px cyan;
-}
-
-.content h2{
-color:#ff00ff;
-margin:10px 0;
-}
-
-.contact{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin:20px 0;
-}
-
-.contact div{
-padding:10px 15px;
-border:1px solid cyan;
-border-radius:25px;
-background:rgba(255,255,255,.05);
-}
-
-.content p{
-line-height:1.8;
-color:#ddd;
+.profile p{
+font-size:20px;
+color:#cbd5e1;
 }
 
 .upload-btn{
-margin-top:20px;
-padding:12px;
-border:1px solid cyan;
-background:#101827;
-color:white;
+margin-top:15px;
+padding:10px 20px;
+background:#00d4ff;
+border:none;
 border-radius:10px;
 cursor:pointer;
+font-weight:bold;
 }
 
-section{
-padding:80px 10%;
-}
-
-.title{
-text-align:center;
-font-size:40px;
-color:cyan;
-margin-bottom:40px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
-
-.card{
-background:rgba(255,255,255,.05);
+.section{
+margin-top:30px;
+background:rgba(255,255,255,0.08);
 padding:25px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
-transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 20px cyan;
+.section h2{
+margin-bottom:15px;
+color:#00d4ff;
 }
 
-.card h3{
-color:cyan;
-margin-bottom:10px;
+textarea{
+width:100%;
+height:120px;
+padding:10px;
+border-radius:10px;
+border:none;
+font-size:16px;
+}
+
+input[type=text]{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+}
+
+button{
+padding:12px 25px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:#00d4ff;
+cursor:pointer;
+font-weight:bold;
+}
+
+.google-box{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.google-box input{
+flex:1;
 }
 
 .skills{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
 gap:15px;
+flex-wrap:wrap;
 }
 
 .skill{
-padding:12px 20px;
-border-radius:25px;
-border:1px solid cyan;
-background:#101827;
+background:#00d4ff;
+color:black;
+padding:10px 15px;
+border-radius:20px;
+font-weight:bold;
 }
 
 footer{
 text-align:center;
-padding:30px;
-background:#02040d;
+padding:20px;
+margin-top:30px;
 }
 
 @media(max-width:768px){
-
-.hero{
-flex-direction:column;
+.profile h1{
+font-size:30px;
 }
-
-.profile-img{
-width:250px;
-height:250px;
 }
-
-.content h1{
-font-size:40px;
-}
-
-}
-
 </style>
 </head>
 <body>
 
-<div class="hero">
+<div class="container">
 
-<div align="center">
+<div class="profile">
 
-<img id="profilePreview"
-src="https://via.placeholder.com/350"
-class="profile-img"
-alt="Profile">
+<img id="profileImage"
+src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
 
-<br><br>
+<br>
 
-<input
-type="file"
-id="imageUpload"
-accept="image/*"
-class="upload-btn">
+<input type="file" id="imageUpload" hidden>
 
-</div>
+<button class="upload-btn"
+onclick="document.getElementById('imageUpload').click()">
+Change Photo
+</button>
 
-<div class="content">
+<h1 contenteditable="true">BRUZLEE RAJ</h1>
 
-<h1>D.BRUZLEE RAJ</h1>
-
-<h2>B.E ECE Student</h2>
-
-<div class="contact">
-<div>📞 9344935594</div>
-<div>✉️ bruzeeliraj@gmail.com</div>
-<div>📍 Chennai, India</div>
-</div>
-
-<p>
-Completed Diploma in Electronics and Communication Engineering
-at S.A Polytechnic College and currently pursuing
-B.E Electronics and Communication Engineering
-at Panimalar Engineering College.
+<p contenteditable="true">
+Electronics & Communication Engineering
 </p>
 
 </div>
 
-</div>
+<div class="section">
 
-<section>
+<h2>About Me</h2>
 
-<h2 class="title">Education</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Panimalar Engineering College</h3>
-<p>B.E Electronics & Communication Engineering</p>
-<p>Currently Studying</p>
-</div>
-
-<div class="card">
-<h3>S.A Polytechnic College</h3>
-<p>Diploma ECE</p>
-<p>Completed</p>
-</div>
+<textarea id="about">
+Highly skilled Electronics and Communication Engineer with expertise in communication systems, embedded systems, IoT and software development.
+</textarea>
 
 </div>
 
-</section>
+<div class="section">
 
-<section>
-
-<h2 class="title">Skills</h2>
+<h2>Skills</h2>
 
 <div class="skills">
-
 <div class="skill">HTML</div>
 <div class="skill">CSS</div>
 <div class="skill">JavaScript</div>
 <div class="skill">Python</div>
-<div class="skill">C</div>
-<div class="skill">C++</div>
+<div class="skill">IoT</div>
 <div class="skill">MATLAB</div>
-<div class="skill">Embedded Systems</div>
+</div>
 
 </div>
 
-</section>
+<div class="section">
 
-<section>
+<h2>Education</h2>
 
-<h2 class="title">Address</h2>
+<textarea>
+B.E Electronics & Communication Engineering
+Panimalar Engineering College
 
-<div class="card">
-
-Door No: 1/191<br>
-Ramar Kovil Street<br>
-North Malayambakkam<br>
-Kundrathur Taluk<br>
-Kanchipuram District<br>
-Chennai - 600123
+Diploma in ECE
+S.A Polytechnic College
+</textarea>
 
 </div>
 
-</section>
+<div class="section">
+
+<h2>Google Search</h2>
+
+<div class="google-box">
+
+<input type="text"
+id="googleSearch"
+placeholder="Search Google">
+
+<button onclick="searchGoogle()">
+Search
+</button>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Contact</h2>
+
+<p>Email:
+<span contenteditable="true">
+bruzeeliraj@gmail.com
+</span>
+</p>
+
+<br>
+
+<p>Phone:
+<span contenteditable="true">
+9344935594
+</span>
+</p>
+
+</div>
 
 <footer>
-
-<h3>D.BRUZLEE RAJ</h3>
-
-<p>Electronics & Communication Engineering Student</p>
-
+© 2026 Bruzlee Raj Portfolio Website
 </footer>
+
+</div>
 
 <script>
 
-const upload=document.getElementById('imageUpload');
-const preview=document.getElementById('profilePreview');
+document.getElementById("imageUpload")
+.addEventListener("change",function(event){
 
-upload.addEventListener('change',function(e){
-
-const file=e.target.files[0];
+const file=event.target.files[0];
 
 if(file){
 
 const reader=new FileReader();
 
-reader.onload=function(event){
+reader.onload=function(e){
 
-preview.src=event.target.result;
+document.getElementById("profileImage")
+.src=e.target.result;
 
-}
+};
 
 reader.readAsDataURL(file);
 
 }
 
 });
+
+function searchGoogle(){
+
+let query=document
+.getElementById("googleSearch")
+.value;
+
+if(query.trim()!==""){
+
+window.open(
+"https://www.google.com/search?q="
++ encodeURIComponent(query),
+"_blank"
+);
+
+}
+
+}
 
 </script>
 
