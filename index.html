@@ -3,209 +3,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D.BRUZLEE RAJ Portfolio</title>
+<title>D.BRUZLEE RAJ | Digital Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Hero Section */
+
+.hero{
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#050816;
-    overflow:hidden;
+    padding:50px;
+    gap:60px;
+    flex-wrap:wrap;
 }
 
-/* Animated Background */
-body::before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:#00ffff;
-    filter:blur(200px);
-    opacity:0.3;
-    animation:move1 8s infinite alternate;
-}
-
-body::after{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:#ff00ff;
-    filter:blur(200px);
-    opacity:0.3;
-    animation:move2 8s infinite alternate;
-}
-
-@keyframes move1{
-    from{transform:translate(-200px,-100px);}
-    to{transform:translate(200px,100px);}
-}
-
-@keyframes move2{
-    from{transform:translate(200px,100px);}
-    to{transform:translate(-200px,-100px);}
-}
-
-.card{
-    position:relative;
-    width:900px;
-    max-width:95%;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:25px;
-    display:flex;
-    overflow:hidden;
-    box-shadow:0 0 40px #00ffff;
-    z-index:10;
-}
-
-.left{
-    width:35%;
-    background:rgba(0,255,255,0.08);
-    padding:30px;
-    text-align:center;
-}
-
-.left img{
-    width:200px;
-    height:200px;
+.profile-img{
+    width:350px;
+    height:350px;
     border-radius:50%;
     object-fit:cover;
-    border:4px solid #00ffff;
-    box-shadow:0 0 30px #00ffff;
+    border:5px solid #00ffff;
+    box-shadow:
+    0 0 20px cyan,
+    0 0 40px cyan,
+    0 0 80px cyan;
+    animation:float 4s ease-in-out infinite;
 }
 
-.left h2{
-    color:white;
-    margin-top:20px;
-    text-shadow:0 0 15px cyan;
+@keyframes float{
+    50%{
+        transform:translateY(-15px);
+    }
 }
 
-.left p{
+.content{
+    max-width:600px;
+}
+
+.content h1{
+    font-size:4rem;
+    color:#00ffff;
+}
+
+.content h2{
+    margin:15px 0;
+    color:#ff00ff;
+}
+
+.content p{
+    line-height:1.8;
     color:#ddd;
-    margin-top:10px;
 }
 
-.right{
-    width:65%;
-    padding:35px;
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    text-decoration:none;
     color:white;
+    background:linear-gradient(45deg,#00ffff,#ff00ff);
+    border-radius:40px;
+    box-shadow:0 0 20px cyan;
+}
+
+/* Sections */
+
+section{
+    padding:80px 10%;
 }
 
 .title{
-    font-size:35px;
+    text-align:center;
+    font-size:2.5rem;
     color:#00ffff;
-    text-shadow:0 0 20px #00ffff;
-    margin-bottom:20px;
+    margin-bottom:40px;
 }
 
-.section{
-    margin-bottom:20px;
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
-.section h3{
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px cyan;
+}
+
+.card h3{
     color:#00ffff;
     margin-bottom:10px;
 }
 
-.section p{
-    color:#ddd;
-    line-height:1.8;
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
 }
 
-button{
-    padding:12px 25px;
-    border:none;
+.skill{
+    padding:12px 20px;
+    background:#111827;
+    border:1px solid cyan;
     border-radius:30px;
-    background:#00ffff;
-    color:black;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:15px;
-    box-shadow:0 0 20px #00ffff;
+    box-shadow:0 0 10px cyan;
 }
 
-button:hover{
-    transform:scale(1.05);
+footer{
+    text-align:center;
+    padding:30px;
+    background:#02040d;
 }
 
-@media(max-width:768px){
-    .card{
-        flex-direction:column;
-    }
-
-    .left,.right{
-        width:100%;
-    }
-}
 </style>
 </head>
 <body>
 
-<div class="card">
+<div class="hero">
 
-    <div class="left">
-        <img src="photo.jpg" alt="Profile">
-        <h2>D.BRUZLEE RAJ</h2>
-        <p>ECE Student</p>
-        <p>📍 Chennai, Tamil Nadu</p>
-    </div>
+    <img
+    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43b?w=800"
+    class="profile-img"
+    alt="Profile">
 
-    <div class="right">
+    <div class="content">
+        <h1>D.BRUZLEE RAJ</h1>
+        <h2>B.E ECE Student</h2>
 
-        <div class="title">My Digital Resume</div>
+        <p>
+            Completed Diploma in Electronics and Communication Engineering
+            at S.A Polytechnic College and currently pursuing
+            Bachelor of Engineering in Electronics and Communication Engineering
+            at Panimalar Engineering College.
+        </p>
 
-        <div class="section">
-            <h3>About Me</h3>
-            <p>
-                I am D.Bruzlee Raj. I completed Diploma ECE at
-                S.A Polytechnic College and currently pursuing
-                B.E Electronics and Communication Engineering
-                at Panimalar Engineering College.
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>Education</h3>
-            <p>
-                🎓 S.A Polytechnic College - Diploma ECE (Completed)
-                <br><br>
-                🎓 Panimalar Engineering College - B.E ECE (Currently Studying)
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>Address</h3>
-            <p>
-                Door No: 1/191,<br>
-                Ramar Kovil Street,<br>
-                North Malayambakkam,<br>
-                Kundrathur Taluk,<br>
-                Kanchipuram District,<br>
-                Chennai - 600123.
-            </p>
-        </div>
-
-        <button onclick="showMsg()">Contact Me</button>
-
+        <a href="#education" class="btn">Explore Profile</a>
     </div>
 
 </div>
 
+<section id="education">
+
+    <h2 class="title">Education</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Panimalar Engineering College</h3>
+            <p>
+                Bachelor of Engineering (ECE)
+                <br>
+                Currently Studying
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>S.A Polytechnic College</h3>
+            <p>
+                Diploma in Electronics and Communication Engineering
+                <br>
+                Completed
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="title">Skills</h2>
+
+    <div class="skills">
+        <div class="skill">Electronics</div>
+        <div class="skill">Communication Systems</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Problem Solving</div>
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="title">Address</h2>
+
+    <div class="card">
+
+        <p>
+        Door No: 1/191,<br>
+        Ramar Kovil Street,<br>
+        North Malayambakkam,<br>
+        Kundrathur Taluk,<br>
+        Kanchipuram District,<br>
+        Chennai – 600123.
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>D.BRUZLEE RAJ</h3>
+    <p>Electronics & Communication Engineering Student</p>
+</footer>
+
 <script>
-function showMsg(){
-    alert("Welcome to D.BRUZLEE RAJ's Digital Resume!");
-}
+
+document.querySelectorAll('.card').forEach(card=>{
+
+    card.addEventListener('mousemove',(e)=>{
+
+        let x=e.offsetX;
+        let y=e.offsetY;
+
+        card.style.background=
+        `radial-gradient(circle at ${x}px ${y}px,
+        rgba(0,255,255,.2),
+        rgba(255,255,255,.05))`;
+
+    });
+
+});
+
 </script>
 
 </body>
